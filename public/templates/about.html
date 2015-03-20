@@ -1,0 +1,42 @@
+<div class="row-fluid">
+    <div class="span12">
+        <img class="about-icon" src="img/question_ico.png" width="50">
+        <h4>{{ 'AIM_ABOUT_What_Title' | translate }}</h4>
+        <p>{{ 'AIM_ABOUT_What_Desc' | translate }}</p>
+    </div>
+</div>
+<br/>
+<div class="row-fluid">
+    <div class="span12">
+        <img class="about-icon" src="img/error_ico.png" width="50" style="float: left;">
+        <h4>{{ 'AIM_ABOUT_Report_Title' | translate }}</h4>
+        <p>{{ 'AIM_ABOUT_Report_Desc' | translate }}</p>
+		<!-- Button trigger modal -->
+		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+		  Report my problem
+		</button>
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">Edit your report message</h4>
+			  </div>
+			  <div class="modal-body">
+				What was your problem ?
+				 <textarea id="description" name="description" style="width: 90%;" rows="6"></textarea>
+			  </div>
+			 
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+				<button type="button" class="btn btn-primary">Submit</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		
+    </div>
+</div>
+<br/>
+<br/>

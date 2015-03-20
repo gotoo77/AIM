@@ -1,0 +1,98 @@
+<div ng-controller="AirportItemController">
+	Here are the results for AirportItem : found <b>{{AirportItem.length}} item(s)</b>.
+	<p><em>Status</em> : <b>{{AirportItem_status}}</b></p>
+	<p>location : <em>{{location}}</em></p>
+<div ng-repeat="airport in AirportItem" class="row-fluid">
+    <form class="form-horizontal span12">
+        <fieldset>
+            <legend>{{ 'AIM_AIRPORT_ITEM_DETAIL' | translate }}</legend>
+            <br/>
+            <div class="row">
+                <div class="span8">
+
+                    <div class="control-group">
+                        <label for="airportID" class="control-label">item ID:</label>
+
+                        <div class="controls">
+                            <input id="airportID" name="id" type="text" value="{{airport.id}}" disabled/>
+                        </div>
+                    </div>
+					
+                    <div class="control-group">
+                        <label for="name" class="control-label">Name:</label>
+
+                        <div class="controls">
+                            <input type="text" id="name" name="name" value="{{airport.name}}"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="country" class="control-label">Country:</label>
+
+                        <div class="controls">
+                            <input type="text" id="country" name="country" value="{{airport.country}}"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="city" class="control-label">City:</label>
+
+                        <div class="controls">
+                            <input type="text" id="city" name="city" value="{{airport.city}}"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+					
+					<div class="control-group">
+                        <label for="zip_code" class="control-label">Zip code:</label>
+
+                        <div class="controls">
+                            <input type="text" id="zip_code" name="zip_code" value="{{airport.zip_code}}"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+
+					<div class="control-group">
+                        <label for="phone_contact" class="control-label">Phone contact:</label>
+
+                        <div class="controls">
+                            <input type="text" id="phone_contact" name="phone_contact" value="{{airport.phone_contact}}"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+					
+					<div class="control-group">
+                        <label for="nb_terminal" class="control-label">Number of terminals:</label>
+
+                        <div class="controls">
+                            <input id="nb_terminal" name="id" type="text" value="{{airport.nb_terminal}}" disabled/>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="description" class="control-label">Description:</label>
+
+                        <div class="controls">
+                            <textarea id="description" name="description" style="width: 75%;" rows="4">{{airport.description}}</textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="span4">
+                    <div class="well">
+                        <p><img id="picture" ng-src="img/airports/{{airport.picture}}" alt="img/no-pic.jpg"/>
+                    </div>
+                </div>
+
+            </div>
+
+        </fieldset>
+
+    </form>
+
+</div>
+
+
+</div>

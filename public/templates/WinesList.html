@@ -1,0 +1,24 @@
+<div ng-controller="WinesListController">
+
+	Here are the results for WinesList : found <b>{{WinesList.length}} items</b>.
+	<p><em>Status</em> : <b>{{WinesList_status}}</b></p>
+	<p>location : <em>{{location}}</em></p>
+
+  <ol> Wines found=
+    <li ng-repeat="wine in WinesList">
+		<h5>{{wine.name}}</h5>
+		<div id="item_info_{{wine.id}}" class="item_info" >
+		<a class="btn  view_description">Description</a>
+		<a href="#wines/{{wine.id}}" class="thumbnail plain" style="text-align: center;">
+			<img ng-src="img/wines/{{wine.picture}}"  height="150" width="125" alt="img/no-pic.jpg"/>
+			<h5>{{wine.name}}</h5>
+			{{wine.year}} {{wine.grapes}}<br/>
+			<i class="icon-globe"></i> {{wine.region}}, {{wine.country}}<br/>
+			<span>{{wine.picture}}</span> 
+		</a></div>
+		<div id="item_desc_{{wine.id}}" class="item_desc">{{wine.description}}</div>
+    </li>
+  </ol>
+  
+
+</div>

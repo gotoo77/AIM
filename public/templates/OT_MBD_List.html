@@ -1,0 +1,132 @@
+<script>
+$.noConflict();
+jQuery( document ).ready(function( $ ) {
+  // Code that uses jQuery's $ can follow here.
+	  $("#cbox_toggle_row_01").change(function(){
+		var self = this;
+		$("#table_OT_MBD .row_01").toggle(!self.checked); 
+	}).change();
+
+	$("#cbox_toggle_col_01").change(function(){
+		var self = this;
+		$("#table_OT_MBD .col_01").toggle(!self.checked); 
+	}).change();
+});
+// Code that uses other library's $ can follow here.
+</script>
+
+<div ng-controller="OT_MBD_ListController">
+
+	Here are the results for OT_MBD_List : found <b>{{OT_MBD_List.length}} items</b>.
+	<p><em>Status</em> : <b>{{OT_MBD_List_status}}</b></p>
+
+<a ng-click="isReplyFormOpen = !isReplyFormOpen">Criteres de filtrage</a>
+<div ng-init="isReplyFormOpen = false" ng-show="isReplyFormOpen" id="replyForm">
+    <!-- Form -->
+	Equality <input type="checkbox" ng-model="strict">
+      <label>Any</label> <input type="text" ng-model="search.$"> <br>
+      <label>RC_Number only</label> <input type="text" ng-model="search.RC_Number"><br>
+      <label>Iss_MBD only</label> <input type="text" ng-model="search.Iss_MBD"><br>
+      <div style="background-color:#FAE8F1">
+      <hr>
+
+      <label>Filter</label> <input type="search" style="width:100px" ng-model="search[filter]"> by {{filter}} <br>
+      <ul>
+      <li><a href="" ng-click="changeFilterTo('$')">Any</a></li>
+      <li><a href="" ng-click="changeFilterTo('RC_Number')">By RC_Number</a></li>
+      <li><a href="" ng-click="changeFilterTo('Iss_MBD')">By Iss_MBD</a></li>
+      </ul>
+      <hr>
+      </div>
+</div>
+  <!-- Table -->
+
+
+  <table id="table_OT_MBD" class="table table-striped table-bordered table-hover">
+ <thead>
+		<tr>
+			<th><input type="checkbox" id="cbox_toggle_col_01" /></th>
+			<th><input type="checkbox" id="cbox_toggle_col_02" /></th>
+			<th><input type="checkbox" id="cbox_toggle_col_03" /></th>
+			<th><input type="checkbox" id="cbox_toggle_col_04" /></th>
+			<th><input type="checkbox" id="cbox_toggle_col_05" /></th>
+			<th><input type="checkbox" id="cbox_toggle_col_06" /></th>
+			<th><input type="checkbox" id="cbox_toggle_col_07" /></th>
+			<th><input type="checkbox" id="cbox_toggle_col_08" /></th>
+			<th><input type="checkbox" id="cbox_toggle_col_09" /></th>
+			<th><input type="checkbox" id="cbox_toggle_col_10" /></th>
+			<th><input type="checkbox" id="cbox_toggle_col_11" /></th>
+			<th><input type="checkbox" id="cbox_toggle_col_12" /></th>
+			<th><input type="checkbox" id="cbox_toggle_col_13" /></th>		
+			<th><input type="checkbox" id="cbox_toggle_col_14" /></th>	
+		</tr>
+		  
+          <tr class="row_1">
+            <th class="col_01">id</th>
+            <th class="col_02">RC_Number</th>
+            <th class="col_03">Iss_MBD</th>
+			<th class="col_04">Ind_Matis</th>
+            <th class="col_05">WU</th>
+			<th class="col_06">Priority</th>
+            <th class="col_07">Status</th>
+            <th class="col_08">Customer</th>
+            <th class="col_09">PN</th>
+            <th class="col_10">Part_name</th>
+			<th class="col_11">Aircraft</th>
+            <th class="col_12">Program</th>
+            <th class="col_13">Prestation</th>
+            <th class="col_14">Comments</th>		
+          </tr>
+        </thead>
+        <tbody>
+
+  <tr ng-repeat="OT_MBD in OT_MBD_List | filter:search:strict">
+			<td class="col_01">{{OT_MBD.id}}			</td> 
+			<td class="col_02">{{OT_MBD.RC_Number}} 	</td>
+			<td class="col_03">{{OT_MBD.Iss_MBD}}  	</td>	
+			<td class="col_04">{{OT_MBD.Ind_Matis}}	</td> 	
+			<td class="col_05">{{OT_MBD.WU}} 			</td>
+			<td class="col_06">{{OT_MBD.Priority}} 	</td>	
+			<td class="col_07">{{OT_MBD.Status}} 		</td>	
+			<td class="col_08">{{OT_MBD.Customer}} 	</td>
+			<td class="col_09">{{OT_MBD.PN}}	        </td>
+			<td class="col_10">{{OT_MBD.Part_name}}	</td>	
+			<td class="col_11">{{OT_MBD.Aircraft}}		</td>	
+			<td class="col_12">{{OT_MBD.Program}}		</td>	
+			<td class="col_13">{{OT_MBD.Prestation}} 	</td>	
+			<td class="col_14">{{OT_MBD.Comments}}		</td>	
+  </tr>
+  </tbody>
+</table>
+</div>
+
+<form ng-controller="OT_MBD_ListController" ng-submit="createItem()">
+    <legend>Create OT Item</legend>
+    <label>Name</label> 
+    <input type="text" id="name" name="name" ng-model="item.name" placeholder="Name here"> 
+    <label>Email</label>
+    <input type="text" id="email" name="email" ng-model="item.email" placeholder="Email here"> 
+    <label>Password</label>
+    <input type="text" id="pwd" name="pwd" ng-model="item.pwd" placeholder="Password here">
+    <button class="btn btn-primary">CREATE 'OT'</button>
+</form>
+<form ng-controller="OT_MBD_ListController" ng-submit="updateItem()">
+    <legend>Update OT Item</legend>
+    <label>Item Id</label> 
+	<input type="number" id="OT_id" name="OT_id" ng-model="item.id" placeholder="update with id here" min="1" max="50">
+	<label>RC_Number</label> 
+    <input type="number" id="RC_Number" name="RC_Number" ng-model="item.RC_Number" placeholder="RC_Number here" min="1" max="50"> 
+    <label>Iss_MBD</label>
+    <input type="number" id="Iss_MBD" name="Iss_MBD" ng-model="item.Iss_MBD" placeholder="Iss_MBD here" min="1" max="50"> 
+    <label>Ind_Matis</label>
+    <input type="number" id="Ind_Matis" name="Ind_Matis" ng-model="item.Ind_Matis" placeholder="Ind_Matis here" min="1" max="50">
+    <label>WU</label>
+    <input type="text" id="WU" name="WU" ng-model="item.WU" placeholder="WU here">
+    <button class="btn btn-warning">UPDATE 'OT'</button>
+</form>
+<form ng-controller="OT_MBD_ListController" ng-submit="deleteItem()">
+    <legend>Delete Item</legend>
+    <label>Item id</label> 
+   <input type="number" id="OT_delete_id" ng-model="item.id" placeholder="delete item with id here" min="1" max="50"> 
+    <button class="btn btn-danger">DELETE 'OT'</button>
+</form>

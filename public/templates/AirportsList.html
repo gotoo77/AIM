@@ -1,0 +1,23 @@
+<div ng-controller="AirportsListController">
+
+	Here are the results for Airports : found <b>{{AirportsList.length}} items</b>.
+	<p><em>Status</em> : <b>{{AirportsList_status}}</b></p>
+	<p>location : <em>{{location}}</em></p>
+
+  <ol> Airports found=
+    <li ng-repeat="airport in AirportsList">
+		<h5>{{airport.name}}</h5>
+		<div id="item_info_{{airport.id}}" class="item_info" >
+		<a href="#airports/{{airport.id}}" class="thumbnail plain" style="text-align: center;">
+			<img ng-src="img/airports/{{airport.picture}}"  height="150" width="125" alt="no-pic.jpg"/>
+			<h5>{{airport.name}}</h5>
+			{{airport.year}} {{airport.grapes}}<br/>
+			<span><img class="flag {{airport.flag_css_class}}"/></span> {{airport.country}}, {{airport.zip_code}}, {{airport.city}}<br/>
+			{{airport.address}}
+		</a></div>
+		<div id="item_desc_{{airport.id}}" class="item_desc">{{airport.description}}</div>
+    </li>
+  </ol>
+  
+
+</div>
