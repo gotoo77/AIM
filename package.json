@@ -1,7 +1,7 @@
 {
   "name": "AIM_Service",
-  "version": "0.2.2",
-  "description": "first version",
+  "version": "0.2.3",
+  "description": "CRUD service based on Web API , using MVC angular.js, SQL database",
   "main": "AIM_server.js",
   "dependencies": {
     "moment": "~2.9.0",
@@ -18,9 +18,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "yop",
+    "test": "test",
     "start": "node AIM_server.js"
   },
-  "author": "MTS",
-  "license": "ISC"
+  "author": "GDU",
+  "license": "TBD"
 }
