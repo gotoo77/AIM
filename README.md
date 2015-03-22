@@ -1,28 +1,21 @@
 [![Build Status](https://travis-ci.org/thanpolas/entity.png)](https://travis-ci.org/thanpolas/entity)
 
-The Entity Object on itself is nothing but an extension of `EventEmitter`. It can be easily extended to create the Interfaces and base classes from where your business logic entities can inherit.
-
-Entities come with a normalized CRUD interface which plugs into [now] two ORM packages, [Mongoose][] and [Sequelize][].
-
-
-
 # AIM server
-uses:
-.Angular
-.Jquery
-.RESTfull
+The AIM project is a demonstration of CRUD operation, RESTfull Wab API usage and Angular.js MVC implementation
+It uses Twitter Bootstrap, Node.js & Express, Jquery
+next step incoming -> Object Relation Mapping (node-entities)
+
 
 ## Install
 ```shell
-tbd
+TBD
 ```
 ## Documentation
 
-Documentation is available on the ...
-
+Documentation is TBD
 
 ## License
 
-none
+TBD
 
 Copyright (c) 2015 GDU.
