@@ -75,9 +75,16 @@ app.put('/OT_MBD/:id', OT_MBD.updateItem);
 app.delete('/OT_MBD/:id', OT_MBD.deleteItem);
 ```
 ##Examples
+
+####links
 This is [an example](http://www.slate.com/ "Title") inline link.
- 
 [This link](http://example.net/) has no title attribute.
+
+###tabs
+| Day     | Meal    | Price |
+| --------|---------|-------|
+| Monday  | pasta   | $6    |
+| Tuesday | chicken | $8    |
 
 ## License
 
