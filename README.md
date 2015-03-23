@@ -8,8 +8,43 @@ The AIM project is a demonstration of usage of several concepts / technologies :
 * Angular.js MVC implementation
 * Twitter Bootstrap
 * Node.js 
-  * zzdzd    
-* Express
+  * Express
+  * ng-translate
+  * ...
+  * 
+cf:
+```javascript
+//
+{
+  "name": "AIM_Service",
+  "version": "0.2.3",
+  "description": "first version",
+  "main": "AIM_server.js",
+  "dependencies": {
+    "moment": "~2.9.0",
+    "mysql": "~2.5.5",
+    "util": "~0.10.3",
+    "express": "~3.0.0",
+	"bootstrap": "~3.3.4",
+	"jquery": "~2.1.3",
+	"angular": "~1.3.15",
+	"angular-route": "~1.3.15",
+	"angular-bootstrap":"0.12.0"
+  },
+  "repository": {
+	  "type": "git",
+	  "url": "git://github.com/gotoo77/AIM.git"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test",
+    "start": "node AIM_server.js"
+  },
+  "author": "GDU",
+  "license": "TBD"
+}
+```javascript
+
 * Jquery...
 
 next step incoming -> Object Relation Mapping (node-entities)
