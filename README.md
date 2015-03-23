@@ -43,7 +43,7 @@ cf:
   "author": "GDU",
   "license": "TBD"
 }
-```javascript
+```
 
 * Jquery...
 
