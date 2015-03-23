@@ -74,6 +74,11 @@ app.post('/OT_MBD/create', OT_MBD.addItem);
 app.put('/OT_MBD/:id', OT_MBD.updateItem);
 app.delete('/OT_MBD/:id', OT_MBD.deleteItem);
 ```
+##Examples
+This is [an example](http://www.slate.com/ "Title") inline link.
+ 
+[This link](http://example.net/) has no title attribute.
+
 ## License
 
 TBD
